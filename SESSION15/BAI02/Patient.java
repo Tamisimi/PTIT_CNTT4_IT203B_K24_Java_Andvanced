@@ -1,4 +1,4 @@
-package session15.hw02;
+package SESSION15.BAI02;
 
 public class Patient {
     private String id;
