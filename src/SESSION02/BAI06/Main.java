@@ -1,4 +1,4 @@
-package session02.hw06;
+package SESSION02.BAI06;
 
 public class Main {
 
