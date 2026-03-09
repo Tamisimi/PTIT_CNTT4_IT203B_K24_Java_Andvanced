@@ -21,9 +21,9 @@ public class Main {
     public static void main(String[] args) {
 
         List<User> users = Arrays.asList(
-                new User("linh"),
-                new User("ngoc"),
-                new User("java")
+                new User("Loc"),
+                new User("Minh"),
+                new User("Thang")
         );
 
         users.stream()
