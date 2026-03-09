@@ -1,4 +1,4 @@
-package session02.hw01;
+package SESSION02.BAI01;
 
 public class BAI01 {
   /*
