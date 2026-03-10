@@ -4,13 +4,11 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        User alice   = new User("alice",   "alice@gmail.com",   Status.ACTIVE);
-        User bob     = new User("bob",     "bob@yahoo.com",     Status.INACTIVE);
-        User charlie = new User("charlie", "charlie@gmail.com", Status.ACTIVE);
-        User david   = new User("david",   "david@outlook.com", Status.ACTIVE);
-        User eve     = new User("eve",     "eve@gmail.com",     Status.INACTIVE);
+         User loc   = new User("loc",   "loc@gmail.com",   Status.ACTIVE);
+        User minh     = new User("minh",     "minh@example.com",     Status.INACTIVE);
+        User thang = new User("thang", "thang@example.com", Status.ACTIVE);
 
-        List<User> users = List.of(alice, bob, charlie, david, eve);
+        List<User> users = List.of(loc, minh, thang);
 
         System.out.println("Username của người dùng có email @gmail.com:");
         users.stream()
