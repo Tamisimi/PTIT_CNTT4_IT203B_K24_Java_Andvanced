@@ -14,25 +14,25 @@ class UserProcessorTest {
     }
 
     @Test
-    void validEmailWithDomain_shouldReturnLowercase() {
+    void validEmail() {
         String result = processor.processEmail("user@gmail.com");
         assertEquals("user@gmail.com", result);
     }
 
     @Test
-    void missingAtSymbol_shouldThrowException() {
+    void missingAt() {
         assertThrows(IllegalArgumentException.class,
             () -> processor.processEmail("usergmail.com"));
     }
 
     @Test
-    void atSymbolWithoutDomain_shouldThrowException() {
+    void noDomain() {
         assertThrows(IllegalArgumentException.class,
             () -> processor.processEmail("user@"));
     }
 
     @Test
-    void mixedCaseEmail_shouldBeNormalizedToLowercase() {
+    void normalizeCase() {
         String result = processor.processEmail("Example@Gmail.com");
         assertEquals("example@gmail.com", result);
     }
