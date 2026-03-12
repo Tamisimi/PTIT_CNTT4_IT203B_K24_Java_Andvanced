@@ -1,4 +1,4 @@
-package SESSION03.SESSION03_06;
+package SESSION03.BAI06;
 
 import java.util.Arrays;
 import java.util.List;

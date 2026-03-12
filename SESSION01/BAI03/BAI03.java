@@ -1,6 +1,6 @@
 package SESSION01.BAI03;
 
-public class SS01_03 {
+public class BAI03 {
     public static void main(String[] args) {
 
         User u = new User();

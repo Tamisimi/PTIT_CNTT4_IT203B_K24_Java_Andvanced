@@ -1,4 +1,4 @@
-package SESSION03.SESSION03_05;
+package SESSION03.BAI05;
 
 public class User {
     private String userName;
