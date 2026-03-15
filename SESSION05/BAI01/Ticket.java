@@ -1,4 +1,4 @@
-package session06.hw01;
+package SESSION06.BAI01;
 
 public class Ticket {
     private String id;
