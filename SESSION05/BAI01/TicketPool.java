@@ -1,4 +1,4 @@
-package session06.hw01;
+package SESSION06.BAI01;
 
 import java.util.LinkedList;
 import java.util.Queue;
