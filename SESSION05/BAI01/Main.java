@@ -1,4 +1,4 @@
-package session06.BAI01;
+package SESSION06.BAI01;
 
 public class Main {
 
