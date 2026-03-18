@@ -1,7 +1,10 @@
 package SESSION06.BAI03;
 
+<<<<<<< HEAD
 import SESSION06.BAI01.Ticket;
 
+=======
+>>>>>>> 18f89c6adf82826124be9ab10499bfde3e6e91e4
 public class BookingCounter implements Runnable {
 
     private String name;
