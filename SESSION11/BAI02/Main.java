@@ -1,4 +1,4 @@
-package SESSION11.SESSION11_02;
+package SESSION11.BAI02;
 
 import java.sql.*;
 
