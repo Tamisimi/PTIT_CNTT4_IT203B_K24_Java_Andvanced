@@ -9,7 +9,7 @@ public class DBContext {
     // 1. Hằng số cấu hình
     private static final String DB_URL = "jdbc:mysql://localhost:3306/hospital_db";
     private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "Linh110711@";
+    private static final String DB_PASSWORD = "Loc131126@";
 
     // 2. Lấy connection
     public static Connection getConnection() throws SQLException {
