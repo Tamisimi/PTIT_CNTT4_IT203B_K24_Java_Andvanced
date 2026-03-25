@@ -1,4 +1,4 @@
-package session07.hw05;
+package SESSION07.BAI05;
 
 public class VNPayPayment implements PaymentMethod {
 
