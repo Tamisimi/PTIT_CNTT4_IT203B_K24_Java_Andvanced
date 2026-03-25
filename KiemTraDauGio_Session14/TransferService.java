@@ -12,10 +12,9 @@ public class TransferService {
 
         try (Connection conn = DatabaseUtil.getConnection()) {
 
-            conn.setAutoCommit(false);   // Bắt đầu transaction
+            conn.setAutoCommit(false);  
 
             try {
-                // 1. Kiểm tra tài khoản gửi tồn tại và đủ tiền (PreparedStatement)
                 String checkSql = "SELECT Balance FROM Accounts WHERE AccountId = ?";
                 try (PreparedStatement psCheck = conn.prepareStatement(checkSql)) {
                     psCheck.setString(1, fromAccountId);
@@ -30,21 +29,18 @@ public class TransferService {
                     }
                 }
 
-                // 2. Gọi Stored Procedure trừ tiền người gửi (amount âm)
                 try (CallableStatement csDebit = conn.prepareCall("{call sp_UpdateBalance(?, ?)}")) {
                     csDebit.setString(1, fromAccountId);
                     csDebit.setDouble(2, -amount);
                     csDebit.executeUpdate();
                 }
 
-                // 3. Gọi Stored Procedure cộng tiền người nhận (amount dương)
                 try (CallableStatement csCredit = conn.prepareCall("{call sp_UpdateBalance(?, ?)}")) {
                     csCredit.setString(1, toAccountId);
                     csCredit.setDouble(2, amount);
                     csCredit.executeUpdate();
                 }
 
-                // 4. Commit nếu thành công
                 conn.commit();
                 System.out.println("Chuyển khoản thành công: " + amount + " từ " + fromAccountId + " sang " + toAccountId);
 
@@ -58,7 +54,6 @@ public class TransferService {
         }
     }
 
-    // Hiển thị kết quả cuối cùng (yêu cầu dùng PreparedStatement)
     public void printAccounts() {
         String sql = "SELECT AccountId, FullName, Balance FROM Accounts ORDER BY AccountId";
 
@@ -66,9 +61,8 @@ public class TransferService {
              PreparedStatement ps = conn.prepareStatement(sql);
              ResultSet rs = ps.executeQuery()) {
 
-            System.out.println("\n=== DANH SÁCH TÀI KHOẢN SAU CHUYỂN KHOẢN ===");
+            System.out.println("\DANH SÁCH TÀI KHOẢN SAU CHUYỂN KHOẢN");
             System.out.printf("%-10s %-20s %15s%n", "AccountId", "FullName", "Balance");
-            System.out.println("-----------------------------------------------------");
 
             while (rs.next()) {
                 System.out.printf("%-10s %-20s %15.2f%n",
